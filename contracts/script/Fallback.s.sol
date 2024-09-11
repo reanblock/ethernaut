@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "forge-std/Test.sol";
+import "forge-std/Script.sol";
 import "../src/levels/Fallback.sol";
 
 /*
@@ -72,7 +72,7 @@ import "../src/levels/Fallback.sol";
     ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
 */
 
-contract FallbackScript is Test {
+contract FallbackScript is Script {
     // replace instance with your level1 instance adddress
     address payable instance = payable(0xbEdEfE3a6f165002E45c25F2106d1967673b3921);
     Fallback level1 = Fallback(instance);
