@@ -18,7 +18,8 @@ import "../src/levels/Fallback.sol";
     forge script script/Fallback.s.sol:FallbackScript \
         --rpc-url sepolia \
         --account auditor \
-        --sender 0x471cd8eaa5d60c2ed4dd42cc3b0de75ecfbbda62 -vvvv
+        --sender 0x471cd8eaa5d60c2ed4dd42cc3b0de75ecfbbda62 \
+        -vvvv
     ```
 
     Results of running this script (with --broadcast)
