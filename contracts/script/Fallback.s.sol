@@ -5,7 +5,7 @@ import "forge-std/Script.sol";
 import "../src/levels/Fallback.sol";
 
 /*
-    Solution script for the Ethernaut Level 1: Fallout
+    Solution script for the Ethernaut Level 1: Fallback
 
     1. Add your priate key to the cast wallet keystore
     2. Replace the instance address used in FallbackScript
