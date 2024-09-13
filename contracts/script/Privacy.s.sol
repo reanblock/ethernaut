@@ -37,7 +37,7 @@ contract PrivacyScript is Script {
         require(level12.locked(), 'level12 already unlocked');
 
         /*
-            In Privacy contrac the bytes32[3] private data starts at slot 3.
+            In Privacy contract the bytes32[3] private data starts at slot 3.
             Since the the array is length 3 the data will be in slots 3,4 & 5.
 
             In the Privacy unlock function the _key is checked against data[2].
@@ -45,7 +45,7 @@ contract PrivacyScript is Script {
             in the array which is located in storage slot 5.
 
             Use the vm.load cheatcode to load data directly from a contracts storage index.
-            Then cast the reesult to a bytes16 and pass it to the unlock function..
+            Then cast the reesult to a bytes16 and pass it to the unlock function.
         */
         bytes32 myKey = vm.load(address(level12), bytes32(uint256(5)));
         level12.unlock(bytes16(myKey));
