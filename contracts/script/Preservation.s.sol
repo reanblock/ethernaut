@@ -5,7 +5,7 @@ import "forge-std/Script.sol";
 import "../src/levels/Preservation.sol";
 
 /*
-    Solution script for the Ethernaut Level 9: Preservation
+    Solution script for the Ethernaut Level 16: Preservation
 
     1. Add your priate key to the cast wallet keystore
     2. Replace the instance address used in PreservationScript
