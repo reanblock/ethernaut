@@ -43,7 +43,9 @@ contract MotorbikeAttack {
             NOTE!! selfdestruct is depreciated since cancun hardfork so this will not actually delete the bytecode anymore!
 
             For an elaborate work around check this article on how to solve this acter the upgrades: 
-            https://github.com/Ching367436/ethernaut-motorbike-solution-after-decun-upgrade/?tab=readme-ov-file#the-solution-after-the-upgrade
+            
+            1. https://github.com/Ching367436/ethernaut-motorbike-solution-after-decun-upgrade/?tab=readme-ov-file#the-solution-after-the-upgrade
+            2. https://github.com/OpenZeppelin/ethernaut/issues/701
         */
         selfdestruct(payable(address(0)));
     }
@@ -72,9 +74,6 @@ contract MotorbikeScript is Script {
         // deploy the attack contract and destroy the implementation (Engine)
         MotorbikeAttack attacker = new MotorbikeAttack(engineAddress);
         attacker.attack();
-
-        /*
-        */
 
         vm.stopBroadcast();
     }
